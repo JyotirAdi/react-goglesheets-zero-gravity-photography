@@ -1,7 +1,6 @@
 // import logo from "./logo.svg";
 import "./App.css";
 
-// Component 1
 const Tabletop = require("tabletop");
 
 function init() {
@@ -10,16 +9,29 @@ function init() {
     error: () => {
       window.location.reload();
     },
+    wanted: [
+      "Jan21",
+      "Feb21",
+      "Mar21",
+      "APR21",
+      "MAY21",
+      "JUN21",
+      "JUL21",
+      "AUG21",
+      "SEP21",
+      "Oct21",
+      "Nov21",
+      "Dec21",
+    ],
   }).then((data) => {
     window.sheets = data;
     document.getElementById("loader-wrapper").style.display = "none";
     document.getElementById("wrapper").style.display = "flex";
+    createVideo();
   });
 }
 
 init();
-
-// Component 1 end
 
 function buildCards(objects) {
   // Resetting previous cards
@@ -32,11 +44,11 @@ function buildCards(objects) {
     .appendChild(document.createElement("div"));
   container.id = "results";
 
-  let cards = container.appendChild(document.createElement("table"));
+  let cards = container.appendChild(document.createElement("ul"));
   cards.className = "cards";
 
   for (let object of objects) {
-    let cards_item = cards.appendChild(document.createElement("tr"));
+    let cards_item = cards.appendChild(document.createElement("li"));
     cards_item.className = "cards_item";
 
     let card = cards_item.appendChild(document.createElement("div"));
@@ -77,8 +89,29 @@ function buildCards(objects) {
   }
 }
 
+function createVideo() {
+  let videos = [
+    "https://www.youtube.com/embed/CuSjVuIBV80",
+    "https://www.youtube.com/embed/27NpldOjCCM",
+    "https://www.youtube.com/embed/dh62rJ31B-I",
+    
+  ];
+
+  let responsive_iframe = document
+    .getElementById("video")
+    .appendChild(document.createElement("iframe"));
+  responsive_iframe.className = "responsive-iframe";
+  responsive_iframe.allow="autoplay";
+  responsive_iframe.title = "YouTube video";
+  let video_num = Math.floor(Math.random() * videos.length);
+  responsive_iframe.src = videos[video_num] + "?autoplay=1&mute=1";
+}
+
 function App() {
   function renderTable() {
+    if (document.getElementById("video"))
+      document.getElementById("video").remove();
+
     let sheets = window.sheets;
 
     let cards = [];
@@ -107,7 +140,7 @@ function App() {
       "CC Final Status",
       "CA_Delivery Status",
       "CA Final Status",
-      "Magazine Final Status"
+      "Magazine Final Status",
     ];
 
     let cardCode = document.forms["search"]["card-code"].value;
@@ -132,19 +165,39 @@ function App() {
     <div id="container">
       <div id="loader-wrapper">
         <nav className="navbar navbar-light my-3">
-          <a className="navbar-brand my-3" href="https://zerogravity.photography/">
-          <img className="image my-3" src="https://zerogravity.photography/wp-content/themes/primary/static/images/logo-zerogravity.png" margin="5px" width="30" height="30" className="d-inline-block align-top" alt=""/>   Zero gravity photography</a>
+          <a
+            className="navbar-brand my-3"
+            href="https://zerogravity.photography/"
+          >
+            <img
+              className="image my-3"
+              src="https://zerogravity.photography/wp-content/themes/primary/static/images/logo-zerogravity.png"
+              margin="5px"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+              alt=""
+            />{" "}
+            Zero gravity photography
+          </a>
         </nav>
         <div id="loader"></div>
       </div>
       <div id="wrapper">
         <nav className="navbar navbar-light my-3">
           <a className="navbar-brand" href="https://zerogravity.photography/">
-          <img className="image my-3" src="https://zerogravity.photography/wp-content/themes/primary/static/images/logo-zerogravity.png" margin="5px" width="30" height="30" className="d-inline-block align-top" alt=""/>   Zero gravity photography</a>
+            <img
+              className="image my-3"
+              src="https://zerogravity.photography/wp-content/themes/primary/static/images/logo-zerogravity.png"
+              margin="5px"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+              alt=""
+            />{" "}
+            Zero gravity photography
+          </a>
         </nav>
-        
-        
-
         <form
           name="search"
           onSubmit={(e) => {
@@ -152,7 +205,12 @@ function App() {
             renderTable();
           }}
         >
-          <select defaultValue={"DEFAULT"} name="sheet" style={{borderColor:"E82D96"}} id="sheet">
+          <select
+            defaultValue={"Jan21"}
+            name="sheet"
+            style={{ borderColor: "E82D96" }}
+            id="sheet"
+          >
             <option value="DEFAULT" disabled hidden>
               Month/YY
             </option>
@@ -169,12 +227,7 @@ function App() {
             <option value="Nov21">Nov21</option>
             <option value="Dec21">Dec21</option>
           </select>
-          <input
-            type="text"
-            name="card-code"
-            placeholder="card code number"
-            style={{borderRradius: "8px" }}
-          />
+          <input type="text" name="card-code" placeholder="card code number" />
           <input
             type="button"
             value="Search"
@@ -187,12 +240,12 @@ function App() {
             }}
           />
         </form>
-        <iframe width="972" height="547" src="https://www.youtube.com/embed/fJ9rUzIMcZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div id="video"></div>
       </div>
       <div id="modal" className="modal">
         <div className="modal-content">
+          <p>No results</p>
           <span className="close">&times;</span>
-          <p>No results found</p>
         </div>
       </div>
     </div>
