@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-goglesheets-zero-gravity-photography/static/css/main.b9a8d09c.chunk.css",
+    "main.js": "/react-goglesheets-zero-gravity-photography/static/js/main.41a52aba.chunk.js",
+    "main.js.map": "/react-goglesheets-zero-gravity-photography/static/js/main.41a52aba.chunk.js.map",
+    "runtime-main.js": "/react-goglesheets-zero-gravity-photography/static/js/runtime-main.4305d18d.js",
+    "runtime-main.js.map": "/react-goglesheets-zero-gravity-photography/static/js/runtime-main.4305d18d.js.map",
+    "static/js/2.9a6d1f0b.chunk.js": "/react-goglesheets-zero-gravity-photography/static/js/2.9a6d1f0b.chunk.js",
+    "static/js/2.9a6d1f0b.chunk.js.map": "/react-goglesheets-zero-gravity-photography/static/js/2.9a6d1f0b.chunk.js.map",
+    "static/js/3.3b2607e5.chunk.js": "/react-goglesheets-zero-gravity-photography/static/js/3.3b2607e5.chunk.js",
+    "static/js/3.3b2607e5.chunk.js.map": "/react-goglesheets-zero-gravity-photography/static/js/3.3b2607e5.chunk.js.map",
+    "index.html": "/react-goglesheets-zero-gravity-photography/index.html",
+    "static/css/main.b9a8d09c.chunk.css.map": "/react-goglesheets-zero-gravity-photography/static/css/main.b9a8d09c.chunk.css.map",
+    "static/js/2.9a6d1f0b.chunk.js.LICENSE.txt": "/react-goglesheets-zero-gravity-photography/static/js/2.9a6d1f0b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4305d18d.js",
+    "static/js/2.9a6d1f0b.chunk.js",
+    "static/css/main.b9a8d09c.chunk.css",
+    "static/js/main.41a52aba.chunk.js"
+  ]
+}
