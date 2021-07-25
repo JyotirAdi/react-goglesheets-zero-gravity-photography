@@ -99,15 +99,15 @@ function App() {
       "IP Final Status",
       // "IP_Delivery Status",
       // "IP Delivered Date",
-      "Client Completion",
-      "Album Team",
-      "Montage Final",
-      "TV_Team Final",
+      "Client Completion Status",
+      "Album Team Final Status",
+      "Montage Final Status",
+      "TV_Team Final Status",
       "CV Final Status",
       "CC Final Status",
-      "CA_Delivery",
+      "CA_Delivery Status",
       "CA Final Status",
-      "Magazine Final"
+      "Magazine Final Status"
     ];
 
     let cardCode = document.forms["search"]["card-code"].value;
@@ -143,7 +143,7 @@ function App() {
           <img className="image my-3" src="https://zerogravity.photography/wp-content/themes/primary/static/images/logo-zerogravity.png" margin="5px" width="30" height="30" className="d-inline-block align-top" alt=""/>   Zero gravity photography</a>
         </nav>
         
-        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1" allow='autoplay=1'></iframe>
+        
 
         <form
           name="search"
@@ -187,6 +187,7 @@ function App() {
             }}
           />
         </form>
+        <iframe width="972" height="547" src="https://www.youtube.com/embed/fJ9rUzIMcZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div id="modal" className="modal">
         <div className="modal-content">
